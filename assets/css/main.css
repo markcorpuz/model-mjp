@@ -1,6 +1,7 @@
 /* SETUP-BE | 1.0.0 | 200513 | assets/scss/main.scss
 ---------------------------------------------------------------------------------------------------- */
-/* SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
+/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/base.scss
+// SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
 ---------------------------------------------------------------------------------------------------- */
 /**
  * Brand Color
@@ -1315,16 +1316,17 @@ div.wpforms-container.one-line:after {
   display: none;
 }
 
-/* SETUP-BE | 1.0.0 | 200326 | assets/scss/partials/site-header.scss
+/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/site-header.scss
+// SETUP-BE | 1.0.0 | 200326 | assets/scss/partials/site-header.scss
 ---------------------------------------------------------------------------------------------------- */
 /* Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: #fff;
   position: relative;
   min-height: 49px;
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .title-area {
@@ -1651,50 +1653,82 @@ div.wpforms-container.one-line:after {
   display: none;
 }
 
-/* Post Summary
+/* SETUP-BE | 1.0.0 | 200521 | assets/scss/partials/post-summary.scss
 ---------------------------------------------------------------------------------------------------- */
-.post-summary {
-  margin-bottom: 32px;
-}
-
-.post-summary__title {
-  font-size: 18px;
-  font-weight: 400;
-  margin: 0;
-}
-.post-summary__title a {
-  color: #212121;
-  text-decoration: none;
-}
-.post-summary__title a:hover {
-  color: #0079bf;
-}
-
-.post-summary__image {
+.item.image {
   display: block;
 }
-@media (min-width: 513px) {
-  .post-summary__image {
-    margin-bottom: 12px;
-  }
+.module.post-summary .item.image img {
+  margin-bottom: 1rem;
 }
 
-.entry-category {
-  font-size: 12px;
+.item.overline {
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
-.entry-category a {
+.item.overline a {
   color: #616161;
   text-decoration: none;
 }
-.entry-category a:hover {
+.item.overline a:hover {
   color: #0079bf;
 }
+.item.title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+}
+.item.title a {
+  color: #212121;
+  text-decoration: none;
+}
+.item.title a:hover {
+  color: #0079bf;
+}
+.item.author {
+  font-size: 0.875rem;
+}
+/**
+ * Need to fix gravatar styles eventually
+ */
+.item.date {
+  font-size: 0.875rem;
+}
+.item.excerpt {
+  font-size: 1rem;
+}
+.items.date_vbar_author_name .item.vbar {
+  font-size: 0.875rem;
+}
+.module.post-summary .items.date_vbar_author_name {
+  margin-top: 1rem;
+}
 
-/* SETUP-BE | 1.0.0 | 200422 | assets/scss/partials/archive.scss
+.post-summary .items.meta {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.item.author.icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.item.author.icon img {
+  border-radius: 50%;
+}
+.item.author.icon .gravatar {
+  margin-right: 0.5rem;
+}
+
+.post-summary {
+  margin-bottom: 32px;
+}
+
+/* SETUP-BE | 1.0.0 | 200521 | assets/scss/partials/archive.scss
 ---------------------------------------------------------------------------------------------------- */
 .archive .site-main .block-area,
 .archive .site-main .no-results {
@@ -1873,7 +1907,7 @@ div.wpforms-container.one-line:after {
 --------------------------------------------- */
 .pagination {
   border-top: 1px solid #E0E0E0;
-  font-size: 16px;
+  font-size: 1.25rem;
   text-align: center;
   padding-top: 22px;
 }
@@ -1906,7 +1940,24 @@ div.wpforms-container.one-line:after {
   color: #fff;
   font-weight: 700;
 }
+.pagination .pagination-previous a,
+.pagination .pagination-next a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #424242;
+}
+.pagination .pagination-previous a:hover,
+.pagination .pagination-next a:hover {
+  color: #0079bf;
+}
+.pagination .pagination-previous.alignleft {
+  float: left;
+}
+.pagination .pagination-next.alignright {
+  float: right;
+}
 
+/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/singular.scss
 /* Singular
 ---------------------------------------------------------------------------------------------------- */
 /* Entry Content
@@ -2093,6 +2144,10 @@ div.wpforms-container.one-line:after {
 .singular .entry-header *:last-child {
   margin-bottom: 0;
 }
+.singular .entry-header h2.entry-title {
+  font-family: "Libre Baskerville", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-weight: 700;
+}
 
 .after-entry > * {
   margin: 24px 0;
@@ -2147,7 +2202,7 @@ div.wpforms-container.one-line:after {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-family: "Libre Baskerville", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
   font-size: 18px;
 }
 @media (min-width: 768px) {

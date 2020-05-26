@@ -1,4 +1,5 @@
-/* SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
+/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/base.scss
+// SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
 ---------------------------------------------------------------------------------------------------- */
 /**
  * Brand Color
@@ -792,47 +793,79 @@ div.wpforms-container.one-line:after {
   display: none;
 }
 
-/* Post Summary
+/* SETUP-BE | 1.0.0 | 200521 | assets/scss/partials/post-summary.scss
 ---------------------------------------------------------------------------------------------------- */
-.post-summary {
-  margin-bottom: 32px;
-}
-
-.post-summary__title {
-  font-size: 18px;
-  font-weight: 400;
-  margin: 0;
-}
-.post-summary__title a {
-  color: #212121;
-  text-decoration: none;
-}
-.post-summary__title a:hover {
-  color: #0079bf;
-}
-
-.post-summary__image {
+.item.image {
   display: block;
 }
-@media (min-width: 513px) {
-  .post-summary__image {
-    margin-bottom: 12px;
-  }
+.module.post-summary .item.image img {
+  margin-bottom: 1rem;
 }
 
-.entry-category {
-  font-size: 12px;
+.item.overline {
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
-.entry-category a {
+.item.overline a {
   color: #616161;
   text-decoration: none;
 }
-.entry-category a:hover {
+.item.overline a:hover {
   color: #0079bf;
+}
+.item.title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+}
+.item.title a {
+  color: #212121;
+  text-decoration: none;
+}
+.item.title a:hover {
+  color: #0079bf;
+}
+.item.author {
+  font-size: 0.875rem;
+}
+/**
+ * Need to fix gravatar styles eventually
+ */
+.item.date {
+  font-size: 0.875rem;
+}
+.item.excerpt {
+  font-size: 1rem;
+}
+.items.date_vbar_author_name .item.vbar {
+  font-size: 0.875rem;
+}
+.module.post-summary .items.date_vbar_author_name {
+  margin-top: 1rem;
+}
+
+.post-summary .items.meta {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.item.author.icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.item.author.icon img {
+  border-radius: 50%;
+}
+.item.author.icon .gravatar {
+  margin-right: 0.5rem;
+}
+
+.post-summary {
+  margin-bottom: 32px;
 }
 
 body, p {
