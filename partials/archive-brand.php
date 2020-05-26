@@ -17,8 +17,12 @@ echo '<article class="module brand post_summary">';
     echo '<div class="items info">';
         
         // TITLE
-        setup_be_title();
+        //setup_be_title();
         //setup_be_title_nolink();
+
+        // TITLE - BRAND_NAME
+        mjp_title_brand_name();
+        //mjp_title_brand_name_nolink();
 
         // EXCERPT
         //setup_be_excerpt();
@@ -26,24 +30,12 @@ echo '<article class="module brand post_summary">';
 
     echo '</div>';
 
+    // FEATURED IMAGE
+    //setup_be_image();
+    //setup_be_image_nolink();
+
     // IMAGE - BRAND_LOGO
-    //mjp_image_brand_logo();
-    //mjp_image_nolink_brand_logo();
+    mjp_image_brand_logo();
+    //mjp_image_brand_logo_nolink();
 
 echo '</article>';
-
-/**
- * To demonstrate the output code in it's basic form, here's what it could look like
- * 
- */
-
-/*
-<div class="module brand post_summary">
-    <a class="item image post_thumbnail"><img></a>
-    <div class="items info">
-        <div class="item title brand_name"><a class="item brand_url">Nike</a></div>
-        <a class="item permalink">EDIT</a>
-    </div>
-    <a class="item image brand_logo"><img></a>
-</div>
-*/

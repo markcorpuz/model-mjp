@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive partial
+ * Archive partial - PRESS
  *
  * @package      SETUP-BE
  * @author       Mark Corpuz
