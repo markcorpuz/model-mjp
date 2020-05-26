@@ -1,4 +1,5 @@
-/* SETUP-BE | 1.0.0 | 200326 | assets/scss/partials/site-header.scss
+/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/site-header.scss
+// SETUP-BE | 1.0.0 | 200326 | assets/scss/partials/site-header.scss
 ---------------------------------------------------------------------------------------------------- */
 
 /* Site Header
@@ -7,9 +8,10 @@
 .site-header {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	background: $white;
 	position: relative;
 	min-height: 49px;
+
+	background-color: rgba(0, 0, 0, 0.85);
 }
 
 .title-area {

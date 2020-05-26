@@ -1,4 +1,5 @@
-/* SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
+/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/base.scss
+// SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
 ---------------------------------------------------------------------------------------------------- */
 
 // Colors
@@ -37,7 +38,7 @@ $highlight: brand-color( 'blue' );
 $border-color: $grey_4;
 
 // Fonts
-$serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+$serif: "Libre Baskerville", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 $sans-serif: "Rubik", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 
 // Content

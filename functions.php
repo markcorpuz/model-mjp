@@ -44,7 +44,7 @@ function ea_global_enqueues() {
 
 	// css
 	wp_dequeue_style( 'child-theme' );
-	wp_enqueue_style( 'ea-fonts', setup_be_theme_fonts_url() );
+	wp_enqueue_style( 'ea-fonts', model_mjp_theme_fonts_url() );
 	wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/main.css' ) );
 }
 add_action( 'wp_enqueue_scripts', 'ea_global_enqueues' );
@@ -74,9 +74,9 @@ add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_scripts' );
  * Theme Fonts URL
  *
  */
-function setup_be_theme_fonts_url() {
+function model_mjp_theme_fonts_url() {
 	//return false;
-	wp_enqueue_style( 'setup_be_google-font', '//fonts.googleapis.com/css?family=Rubik:300,400,500,700,900', array(), genesis_get_theme_version() );
+	wp_enqueue_style( 'model_mjp_google-font', '//fonts.googleapis.com/css?family=Rubik:300,400,500,700,900|Libre+Baskerville:ital,wght@0,400;0,700;1,400', array(), genesis_get_theme_version() );
 }
 
 /**
@@ -99,6 +99,7 @@ function ea_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/markup.php' );
 	include_once( get_stylesheet_directory() . '/inc/helper-functions.php' );
 	include_once( get_stylesheet_directory() . '/inc/layouts.php' );
+	include_once( get_stylesheet_directory() . '/inc/custom-logo-model-mjp.php' );
 	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
 	include_once( get_stylesheet_directory() . '/inc/loop.php' );
 	include_once( get_stylesheet_directory() . '/inc/author-box.php' );
