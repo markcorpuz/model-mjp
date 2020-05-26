@@ -41,6 +41,8 @@ echo '<article class="module post-summary">';
 		// EXCERPT
 		setup_be_excerpt();
 		//setup_be_excerpt_maxwords();
+		
+		mjp_permalink_brand();
 
 	echo '</div>';
 

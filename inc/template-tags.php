@@ -24,14 +24,14 @@
  */
 
 function ea_post_summary_image( $size = 'thumbnail_medium' ) {
-	echo '<a class="post-summary__image" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( ea_entry_image_id(), $size ) . '</a>';
+	echo '<a class="post-summary__image" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( ea_entry_image_id(), $size, "", ["class" => "item img"] ) . '</a>';
 }
 
 function setup_be_image( $size = 'thumbnail_medium' ) {
-	echo '<a class="item image link" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( ea_entry_image_id(), $size ) . '</a>';
+	echo '<a class="item image link" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( ea_entry_image_id(), $size, "", ["class" => "item img"] ) . '</a>';
 }
 function setup_be_image_nolink( $size = 'thumbnail_medium' ) {
-	echo wp_get_attachment_image( ea_entry_image_id(), $size );
+	echo wp_get_attachment_image( ea_entry_image_id(), $size, "", ["class" => "item img"] );
 }
 
 /**

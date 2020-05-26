@@ -37,5 +37,8 @@ echo '<article class="module brand post_summary">';
     // IMAGE - BRAND_LOGO
     mjp_image_brand_logo();
     //mjp_image_brand_logo_nolink();
+    
+    // PERMALINK - BRAND
+    mjp_permalink_brand();
 
 echo '</article>';
