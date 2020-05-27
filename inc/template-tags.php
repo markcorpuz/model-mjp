@@ -34,6 +34,7 @@ function setup_be_image_nolink( $size = 'thumbnail_medium' ) {
 	echo wp_get_attachment_image( ea_entry_image_id(), $size, "", ["class" => "item img"] );
 }
 
+
 /**
  * Entry Image ID
  *
@@ -77,11 +78,6 @@ function ea_post_summary_title() {
 	$tag = ( is_singular() || -1 === $wp_query->current_post ) ? 'h3' : 'h2';
 	echo '<' . $tag . ' class="post-summary__title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></' . $tag . '>';
 }
-function setup_be_post_summary_title() {
-	global $wp_query;
-	$tag = ( is_singular() || -1 === $wp_query->current_post ) ? 'h3' : 'h2';
-	echo '<' . $tag . ' class="item title post-summary__title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></' . $tag . '>';
-}
 
 function setup_be_title() {
 	global $wp_query;
@@ -102,9 +98,6 @@ function setup_be_title_nolink() {
 function ea_entry_author() {
 	$id = get_the_author_meta( 'ID' );
 	echo '<div class="item author">By <a href="' . get_author_posts_url( $id ) . '">' . get_the_author() . '</a></div>';
-}
-function setup_be_post_summary_image( $size = 'thumbnail_medium' ) {
-	echo '<a class="item image post-summary__image" href="' . get_permalink() . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( ea_entry_image_id(), $size ) . '</a>';
 }
 
 	/**
@@ -222,3 +215,32 @@ function setup_be_post_summary_image( $size = 'thumbnail_medium' ) {
 	        echo '<div class="item excerpt">'.wp_trim_words( $the_excerpt, $max_words ).'</div>';
 	    }
 	}
+
+
+/**
+ * PERMALINK - BRAND
+ * 
+ */
+
+function setup_be_edit() {
+
+	// specify user privileges that can edit
+	$user_types = array( 'administrator', 'editor' );
+    
+	// validate if user is logged in
+	if( is_user_logged_in() ) {
+		
+		// what type of access
+		foreach( $user_types as $user_type ) {
+
+			if( current_user_can( $user_type ) ){
+
+				// regular link				
+				//return edit_post_link( 'Edit entry' );
+				// OR
+				// you might want to use the URL for other purposes
+				echo '<div class="item edit"><a href="'.get_edit_post_link( get_the_ID() ).'">EDIT</a></div>';
+			}
+		}
+	}
+}

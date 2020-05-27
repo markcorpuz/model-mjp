@@ -44,6 +44,9 @@ echo '<article class="module post-summary">';
 		
 		mjp_permalink_brand();
 
+		// ADMIN
+		setup_be_edit();
+
 	echo '</div>';
 
 echo '</article>';
