@@ -1653,12 +1653,16 @@ div.wpforms-container.one-line:after {
   display: none;
 }
 
-/* SETUP-BE | 1.0.0 | 200521 | assets/scss/partials/post-summary.scss
+/* SETUP-BE | 1.0.0 | 200526 | assets/scss/partials/post-summary.scss
 ---------------------------------------------------------------------------------------------------- */
 .item.image {
   display: block;
 }
 .module.post-summary .item.image img {
+  margin-bottom: 1rem;
+}
+
+.module.post-summary .item.img {
   margin-bottom: 1rem;
 }
 
@@ -1707,6 +1711,18 @@ div.wpforms-container.one-line:after {
   margin-top: 1rem;
 }
 
+.item.edit a {
+  font-size: 0.5rem;
+  color: #fff;
+  background-color: #ccc;
+  padding: 2px 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.item.edit a:hover {
+  background-color: #0079bf;
+}
+
 .post-summary .items.meta {
   font-size: 0.875rem;
   margin-top: 1rem;
@@ -1724,12 +1740,11 @@ div.wpforms-container.one-line:after {
   margin-right: 0.5rem;
 }
 
-.post-summary {
-  margin-bottom: 32px;
-}
-
-/* SETUP-BE | 1.0.0 | 200521 | assets/scss/partials/archive.scss
+/* SETUP-BE | 1.0.0 | 200526 | assets/scss/partials/archive.scss
 ---------------------------------------------------------------------------------------------------- */
+.archive .site-main {
+  grid-row-gap: 32px;
+}
 .archive .site-main .block-area,
 .archive .site-main .no-results {
   grid-column: 1/-1;
@@ -1957,7 +1972,6 @@ div.wpforms-container.one-line:after {
   float: right;
 }
 
-/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/singular.scss
 /* Singular
 ---------------------------------------------------------------------------------------------------- */
 /* Entry Content
@@ -2143,10 +2157,6 @@ div.wpforms-container.one-line:after {
 }
 .singular .entry-header *:last-child {
   margin-bottom: 0;
-}
-.singular .entry-header h2.entry-title {
-  font-family: "Libre Baskerville", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  font-weight: 700;
 }
 
 .after-entry > * {
