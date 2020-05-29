@@ -9,29 +9,40 @@
 **/
 
 
-// NATIVE | ID
-$pid = get_the_ID();
-
-
 /**
  * IMAGE - BRAND_LOGO
  * 
  */
 
 function mjp_image_brand_logo( $size = 'thumbnail_medium' ) {
-	$brand_site = get_post_meta( get_the_ID(), "brand_site", TRUE );
-	echo '<a class="item image link brand_logo" href="' . $brand_site . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( get_post_meta( get_the_ID(), "brand_logo", TRUE ), 'thumbnail_medium' ) . '</a>';
+    
+    //$brand_site = mjp_link_validation( get_post_meta( get_the_ID(), "brand_site", TRUE ), get_the_ID() );
+    $brand_site = get_post_meta( get_the_ID(), "brand_site", TRUE );
+    
+	echo '<a class="item image link brand_logo" href="' . $brand_site . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( get_post_meta( get_the_ID(), "brand_logo", TRUE ), $size, "", ["class" => "item img"] ) . '</a>';
+
 }
 function mjp_image_brand_logo_nolink( $size = 'thumbnail_medium' ) {
-	echo wp_get_attachment_image( get_post_meta( get_the_ID(), "brand_logo", TRUE ), 'thumbnail_medium' );
+	echo wp_get_attachment_image( get_post_meta( get_the_ID(), "brand_logo", TRUE ), $size, "", ["class" => "item img"] );
+}
+function mjp_image_brand_logo_jake( $size = 'thumbnail_medium', $pid = FALSE ) {
+    
+    if( $pid ) {
+        $post_id = $pid;
+    } else {
+        $post_id = get_the_ID();
+    }
+    
+    $brand_site = get_post_meta( $post_id, "brand_site", TRUE );
+    
+	echo '<a class="item image link brand_logo" href="' . $brand_site . '" tabindex="-1" aria-hidden="true">' . wp_get_attachment_image( get_post_meta( $post_id, "brand_logo", TRUE ), $size, "", ["class" => "item img"] ) . '</a>';
 }
 
 /**
- * NOTE: The code below came from Bill Erickson which I presume does a job of pulling the post_thumbnail
- * Perhaps we can use the same thing for CPT?
- * I kinda want to explore our options too in this regard for instance, if I wanted to pull the image coming from a different post_type
- * 
+ * Entry Image ID
+ *
  */
+
 if (!function_exists('ea_entry_image_id')) {
 	function ea_entry_image_id() {
 		return has_post_thumbnail() ? get_post_thumbnail_id() : get_option( 'options_ea_default_image' );
@@ -45,39 +56,59 @@ if (!function_exists('ea_entry_image_id')) {
  */
 
 function mjp_title_brand_name() {
+	//$brand_site = mjp_link_validation( get_post_meta( get_the_ID(), "brand_site", TRUE ), get_the_ID() );
 	$brand_site = get_post_meta( get_the_ID(), "brand_site", TRUE );
-	echo '<a class="item title link brand_logo" href="' . $brand_site . '" tabindex="-1" aria-hidden="true">' . get_post_meta( get_the_ID(), "brand_name", TRUE ) . '</a>';
+    echo '<div class="item title link brand_name"><a href="' . $brand_site . '" tabindex="-1" aria-hidden="true">' . get_post_meta( get_the_ID(), "brand_name", TRUE ) . '</a></div>';
 }
 function mjp_title_brand_name_nolink() {
-	echo get_post_meta( get_the_ID(), "brand_name", TRUE );
+	echo '<div class="item title brand_name">' . get_post_meta( get_the_ID(), "brand_name", TRUE ) . '</div>';
 }
 
 
 /**
- * PERMALINK - BRAND
+ * LINK | VALIDATION
  * 
  */
-
-function mjp_permalink_brand() {
-	// specify user privileges that can edit
-	$user_types = array( 'administrator', 'editor' );
-	// validate if user is logged in
-	if( is_user_logged_in() ) {
-
-		// what type of access
-		foreach( $user_types as $user_type ) {
-
-			if( current_user_can( $user_type ) ){
-
-				// regular link				
-				//return edit_post_link( 'Edit entry' );
-
-				// OR
-
-				// you might want to use the URL for other purposes
-				return '<a href="'.get_edit_post_link( get_the_ID() ).'">EDIT</a>';
-
-			}
-		}
-	}
+/*
+if( !function_exists( 'mjp_link_validation' ) ) {
+    
+    function mjp_link_validation( $url, $pid ) {
+        
+    	// validate press_link
+    	if( $url && mjp_link_validation_curl( $url ) ) {
+    	    return $url;
+    	} else {
+    	    return get_the_permalink( $pid );
+    	}
+        
+    }
+    
 }
+if( !function_exists( 'mjp_link_validation_curl' ) ) {
+    
+    function mjp_link_validation_curl( $url ) {
+          
+        // Use curl_init() function to initialize a cURL session 
+        $curl = curl_init( $url ); 
+          
+        // Use curl_setopt() to set an option for cURL transfer 
+        curl_setopt( $curl, CURLOPT_NOBODY, true); 
+          
+        // Use curl_exec() to perform cURL session 
+        $result = curl_exec( $curl ); 
+
+        // Use curl_getinfo() to get information 
+        // regarding a specific transfer 
+        $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);  
+        
+        if ($statusCode == 404) { 
+            //echo "URL Doesn't Exist"; 
+            return FALSE;
+        } else { 
+            //echo "URL Exist"; 
+            return TRUE;
+        }
+        
+    }
+}
+*/

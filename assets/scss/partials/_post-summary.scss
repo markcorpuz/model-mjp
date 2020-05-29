@@ -61,12 +61,14 @@
 // setup_be_title_nolink() {;
 
 .item.title {
+	color: $grey_9;
+	font-family: "Libre Baskerville", arial, serif;
 	font-size: 1.25rem;
-	font-weight: 500;
+	font-weight: 600;
 	margin: 0;
 
 	a {
-		color: $grey_10;
+		color: $grey_9;
 		text-decoration: none;
 
 		&:hover {

@@ -1,0 +1,63 @@
+/* MODEL-MJP | 1.0.0 | 200527 | assets/scss/partials/post-summary-brand.scss
+---------------------------------------------------------------------------------------------------- */
+
+
+// MODULE POST-SUMMARY
+//
+
+.module.post-summary {}
+
+
+// IMAGE BRAND_LOGO
+//
+// mjp_image_brand_logo();
+// mjp_image_brand_logo_nolink();
+
+.item.image.brand_logo {
+	display: block;
+	border: 1px solid #eee;
+	padding: 1rem;
+	margin-bottom: 0.875rem;
+
+	.module.post-summary & {
+		img {
+			margin-bottom: 0;
+		}
+	}
+}
+.item.img.brand_logo {
+	margin-bottom: 0.875rem;
+
+	.module.post-summary & {
+		margin-bottom: 0;
+	}
+}
+
+
+// TITLE
+//
+// mjp_title_brand_name() {;
+// mjp_title_brand_name_nolink() {;
+
+.item.title.brand_name {
+	text-align: center;
+
+	a {
+		&:hover {}
+	}
+
+	.module.brand.post-summary {}
+}
+
+
+// EXCERPT
+//
+// setup_be_excerpt();
+// setup_be_excerpt_maxwords();
+
+.item.excerpt {
+
+	.module.post-summary.brand & {
+		margin-top: 0.875rem;
+	}
+}

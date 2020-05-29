@@ -1,4 +1,4 @@
-/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/base.scss
+/* MODEL-MJP | assets/scss/partials/base.scss
 // SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
 ---------------------------------------------------------------------------------------------------- */
 
@@ -26,6 +26,7 @@ $brand_colors: (
   'lightgrey' : $grey_2,
   'grey'      : $grey_5,
   'darkgrey'  : $grey_8,
+  'pink'      : #ea0d8a,
 );
 @import "../modules/brand-color";
 
@@ -34,7 +35,7 @@ $twitter: #00B6F1;
 $pinterest: #CB2027;
 
 $base-color: $grey_9;
-$highlight: brand-color( 'blue' );
+$highlight: brand-color( 'pink' );
 $border-color: $grey_4;
 
 // Fonts

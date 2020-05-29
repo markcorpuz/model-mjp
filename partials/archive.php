@@ -11,8 +11,8 @@
 echo '<article class="module post-summary">';
 
 	// FEATURED IMAGE
-	//setup_be_image();
-	setup_be_image_nolink();
+	setup_be_image('medium');
+	//setup_be_image_nolink('medium');
 
 	echo '<div class="items info">';
 
@@ -41,8 +41,6 @@ echo '<article class="module post-summary">';
 		// EXCERPT
 		setup_be_excerpt();
 		//setup_be_excerpt_maxwords();
-		
-		mjp_permalink_brand();
 
 		// ADMIN
 		setup_be_edit();

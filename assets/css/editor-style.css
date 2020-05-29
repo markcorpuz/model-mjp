@@ -1,4 +1,4 @@
-/* MODEL-MJP | 1.0.0 | 200518 | assets/scss/partials/base.scss
+/* MODEL-MJP | assets/scss/partials/base.scss
 // SETUP-BE | 1.0.0 | 200505 | assets/scss/partials/base.scss
 ---------------------------------------------------------------------------------------------------- */
 /**
@@ -86,7 +86,7 @@ body {
 }
 
 a {
-  color: #0079bf;
+  color: #ea0d8a;
   text-decoration: underline;
 }
 a:hover {
@@ -426,6 +426,12 @@ h6 {
 .wp-block-button__link.has-darkgrey-background-color:hover, .wp-block-button__link.has-darkgrey-background-color:focus {
   background-color: #484848;
 }
+.wp-block-button__link.has-pink-color:hover, .wp-block-button__link.has-pink-color:focus {
+  color: #ea0d8a;
+}
+.wp-block-button__link.has-pink-background-color:hover, .wp-block-button__link.has-pink-background-color:focus {
+  background-color: #ba0a6e;
+}
 
 /* Blockquote
 --------------------------------------------- */
@@ -590,6 +596,14 @@ img.aligncenter {
   background-color: #616161;
 }
 
+.has-pink-color {
+  color: #ea0d8a;
+}
+
+.has-pink-background-color {
+  background-color: #ea0d8a;
+}
+
 /* Group
 --------------------------------------------- */
 .wp-block-group .wp-block-group__inner-container {
@@ -724,7 +738,7 @@ div.wpforms-container.one-line:after {
   padding: 10px;
 }
 .shared-counts-wrap.style-icon .shared-counts-button:hover svg {
-  fill: #0079bf;
+  fill: #ea0d8a;
 }
 .shared-counts-wrap.style-icon .shared-counts-button:not(.included_total) .shared-counts-label,
 .shared-counts-wrap.style-icon .shared-counts-button:not(.included_total) .shared-counts-count {
@@ -818,19 +832,21 @@ div.wpforms-container.one-line:after {
   text-decoration: none;
 }
 .item.overline a:hover {
-  color: #0079bf;
+  color: #ea0d8a;
 }
 .item.title {
+  color: #424242;
+  font-family: "Libre Baskerville", arial, serif;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
 }
 .item.title a {
-  color: #212121;
+  color: #424242;
   text-decoration: none;
 }
 .item.title a:hover {
-  color: #0079bf;
+  color: #ea0d8a;
 }
 .item.author {
   font-size: 0.875rem;
@@ -860,7 +876,7 @@ div.wpforms-container.one-line:after {
   text-decoration: none;
 }
 .item.edit a:hover {
-  background-color: #0079bf;
+  background-color: #ea0d8a;
 }
 
 .post-summary .items.meta {

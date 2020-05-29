@@ -8,7 +8,7 @@
  * @license      GPL-2.0+
 **/
 
-echo '<article class="module brand post_summary">';
+echo '<article class="module brand post-summary">';
 
     // FEATURED IMAGE
     //setup_be_image();
@@ -24,21 +24,17 @@ echo '<article class="module brand post_summary">';
         mjp_title_brand_name();
         //mjp_title_brand_name_nolink();
 
+        // IMAGE - BRAND_LOGO
+        mjp_image_brand_logo('medium');
+        //mjp_image_brand_logo_nolink('medium');
+
         // EXCERPT
-        //setup_be_excerpt();
+        setup_be_excerpt();
         //setup_be_excerpt_maxwords();
 
     echo '</div>';
-
-    // FEATURED IMAGE
-    //setup_be_image();
-    //setup_be_image_nolink();
-
-    // IMAGE - BRAND_LOGO
-    mjp_image_brand_logo();
-    //mjp_image_brand_logo_nolink();
     
-    // PERMALINK - BRAND
-    mjp_permalink_brand();
+    // ADMIN
+    setup_be_edit();
 
 echo '</article>';

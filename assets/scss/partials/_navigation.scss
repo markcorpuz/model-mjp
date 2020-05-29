@@ -20,10 +20,11 @@
 
 		a {
 			border: none;
-			color: $base-color;
+			color: $grey_4;
+			//color: $base-color;
 			display: block;
 			font-size: 16px;
-			font-weight: 400;
+			font-weight: 500;
 			line-height: 22px;
 			padding: 13px 18px;
 			position: relative;
@@ -31,7 +32,8 @@
 		}
 
 		&:hover > a {
-			background: $grey_2;
+			color: $highlight;
+			//background: $grey_2;
 		}
 
 		&.current-menu-item > a,
